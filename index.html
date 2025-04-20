@@ -25,7 +25,7 @@
 
     .button1:hover {
       background-color: blue;
-    transform: scale(2);
+    transform: scale(1.05);
 }
     }
   </style>
@@ -35,5 +35,27 @@
   <button class="button1" onclick="window.open('https://www.amazon.com', '_blank')">
     Go to Amazon
   </button>
+    <button class="button1" onclick="handleClick()">
+    Click Me!
+  </button>
+
+  <script>
+    function handleClick() {
+      alert("Welcome to the Red Website!");
+
+      const userAnswer = prompt("What's your favorite color?");
+      
+      if (userAnswer) {
+        alert("Nice choice! You said: " + userAnswer);
+        // Optional: log it in the console
+        console.log("User's favorite color:", userAnswer);
+      } else {
+        alert("You didn't type anything!");
+      }
+    }
+  </script>
+
+</body>
+</html>
 </body>
 </html>
