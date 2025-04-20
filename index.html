@@ -5,7 +5,7 @@
     <title>My Red Website</title>
     <style>
         body {
-            background-color: red;
+            background-color: orange;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -14,11 +14,29 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to My Red Website!</h1>
+    <h1>Welcome to My Website!</h1>
 </body>
-<button onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ';"><h1>click me NOW</h1>
-</button>
-<button style="margin-top: 50px;">
-<h1>click me NOW</h1>
-</button>
+.button1 {
+      margin-top: 100px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: white;
+      color: red;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button1:hover {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <!-- The button! -->
+  <button class="button1" onclick="window.open('https://www.amazon.com', '_blank')">
+    Go to Amazon
+  </button>
+</body>
 </html>
