@@ -64,20 +64,20 @@
       if (userAnswer) {
         document.body.style.backgroundColor = userAnswer;
         secretCode = userAnswer.toLowerCase(); // Save the secret code
-        alert("Color set! Remember it... 😉");
+        alert("Color set!");
       } else {
         alert("You didn't type anything!");
       }
     }
 
     function accessBrowser() {
-      const userInput = prompt("Enter your access code:");
-      if (userInput && userInput.toLowerCase() === secretCode) {
-        document.getElementById('hiddenBrowser').style.display = 'block';
-      } else {
-        alert("Access denied. Wrong code.");
-      }
-    }
+  const userInput = prompt("Enter your access code:");
+  if (userInput && userInput.toLowerCase() === secretCode) {
+    window.open("https://www.crazygames.com", "_blank");
+  } else {
+    alert("Access denied. Wrong code.");
+  }
+}
   </script>
 
 </body>
