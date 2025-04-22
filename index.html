@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Canvas</title>
-    <link rel="icon" type="image/x-icon" href="https://canvas.instructure.com/favicon.ico">
-    <style>
-        body {
-            background-color: red;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 100px;
-            padding: 100px 300px;
-        }
-.button1 {
-      margin-top: 100px;
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: white;
-      color: red;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+  <meta charset="UTF-8" />
+  <title>Red Website</title>
+  <style>
+    body {
+      background-color: red;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      padding: 100px 300px;
     }
-.button2 {
-      margin-top: 100px;
+
+    .button1, .button2, .button3 {
+      margin: 20px;
       padding: 15px 30px;
       font-size: 18px;
       background-color: white;
@@ -36,52 +25,60 @@
       transition: background-color 0.3s ease;
     }
 
-    .button1:hover {
+    .button1:hover, .button2:hover, .button3:hover {
       background-color: blue;
-    transform: scale(1.05);
-}
-.button2:hover {
-      background-color: blue;
-    transform: scale(1.05);
-        }
+      transform: scale(1.05);
+    }
+
+    #hiddenBrowser {
+      display: none;
+      width: 80%;
+      height: 400px;
+      border: 2px solid white;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <!-- The button! -->
+
   <button class="button1" onclick="window.open('https://www.amazon.com', '_blank')">
     Go to Amazon
   </button>
-    <button class="button2" onclick="handleClick()">
+
+  <button class="button2" onclick="handleClick()">
     Click Me!
   </button>
 
+  <button class="button3" onclick="accessBrowser()">
+    browser101
+  </button>
+
+  <iframe id="hiddenBrowser" src="https://example.com"></iframe>
+
   <script>
-     function handleClick() {
-    alert("Welcome to the Red Website!");
+    let secretCode = null;
 
-    const userAnswer = prompt("What's your favorite color?");
-    
-    if (userAnswer) {
-      alert("Nice choice! You said: " + userAnswer);
-      console.log("User's favorite color:", userAnswer);
-
-      // Validate if it's a real color
-      const testColor = document.createElement("div");
-      testColor.style.color = userAnswer;
-
-      if (testColor.style.color !== "") {
+    function handleClick() {
+      alert("Welcome to the Red Website!");
+      const userAnswer = prompt("What's your favorite color?");
+      if (userAnswer) {
         document.body.style.backgroundColor = userAnswer;
+        secretCode = userAnswer.toLowerCase(); // Save the secret code
+        alert("Color set! Remember it... 😉");
       } else {
-        alert("Oops! That doesn’t look like a real color.");
+        alert("You didn't type anything!");
       }
-
-    } else {
-      alert("You didn't type anything!");
     }
-  }
+
+    function accessBrowser() {
+      const userInput = prompt("Enter your access code:");
+      if (userInput && userInput.toLowerCase() === secretCode) {
+        document.getElementById('hiddenBrowser').style.display = 'block';
+      } else {
+        alert("Access denied. Wrong code.");
+      }
+    }
   </script>
 
-</body>
-</html>
 </body>
 </html>
