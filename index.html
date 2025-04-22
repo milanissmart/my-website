@@ -56,19 +56,29 @@
   </button>
 
   <script>
-    function handleClick() {
-      alert("Welcome to the Red Website!");
+     function handleClick() {
+    alert("Welcome to the Red Website!");
 
-      const userAnswer = prompt("What's your favorite color?");
-      
-      if (userAnswer) {
-        alert("Nice choice! You said: " + userAnswer);
-        // Optional: log it in the console
-        console.log("User's favorite color:", userAnswer);
+    const userAnswer = prompt("What's your favorite color?");
+    
+    if (userAnswer) {
+      alert("Nice choice! You said: " + userAnswer);
+      console.log("User's favorite color:", userAnswer);
+
+      // Validate if it's a real color
+      const testColor = document.createElement("div");
+      testColor.style.color = userAnswer;
+
+      if (testColor.style.color !== "") {
+        document.body.style.backgroundColor = userAnswer;
       } else {
-        alert("You didn't type anything!");
+        alert("Oops! That doesn’t look like a real color.");
       }
+
+    } else {
+      alert("You didn't type anything!");
     }
+  }
   </script>
 
 </body>
